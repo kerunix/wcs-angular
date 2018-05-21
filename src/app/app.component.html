@@ -5,5 +5,10 @@
 
 <hr>
 <!-- Outputing second component -->
-<app-wilders-list></app-wilders-list>
+<!-- One input and two events to be listened for -->
+<app-wilders-list
+  [wilder]="wilder"
+  (addWilder)="onWilderAdded($event)"
+  (removeWilder)="onWilderRemoved()"
+></app-wilders-list>
 

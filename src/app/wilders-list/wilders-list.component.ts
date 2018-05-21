@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-wilders-list',
@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wilders-list.component.css']
 })
 export class WildersListComponent implements OnInit {
+
+  // Declare Input data from parent component
+  @Input() wilder;
+
+  // Declare output events to be emitted to the parent
+  @Output() removeWilder = new EventEmitter();
+  @Output() addWilder = new EventEmitter();
+
   namePlaceholder = 'Name';
   rolePlaceholder = 'Role';
 
@@ -13,10 +21,7 @@ export class WildersListComponent implements OnInit {
 
   ngOnInit() {}
 
-  addWilder() {
-    alert('You added a Wilder !');
-  }
-  removeWilder(value) {
-    alert(value);
+  remove() {
+    this.removeWilder.emit(null);
   }
 }
