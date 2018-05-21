@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WildersListComponent implements OnInit {
 
+  // Declare empty search term
+  searchTerm = '';
   name = 'Name';
   role = 'Role';
 
@@ -29,12 +31,10 @@ export class WildersListComponent implements OnInit {
 
   ngOnInit() {}
 
-  // Add a wilder using two-way data binding
   addWilder(value) {
     this.wilders.push({name: this.name, role: this.role});
   }
 
-  // Remove a wilder at a specific index
   removeWilder(index) {
     this.wilders.splice(index, 1);
   }

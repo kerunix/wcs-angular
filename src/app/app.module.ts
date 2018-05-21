@@ -7,12 +7,14 @@ import { routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WildersListComponent } from './wilders-list/wilders-list.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    WildersListComponent
+    WildersListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

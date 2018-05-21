@@ -6,14 +6,18 @@
 <input [(ngModel)]="role">
 
 <button (click)="addWilder('You Added a Wilder !')">Add</button>
+<hr>
+
+<!-- Search function, binded to our search term for real time search -->
+<label>Search for a wilder</label>
+<input [(ngModel)]="searchTerm">
 
 <div class="list">
   <ul>
-    <!-- Iterate through our Array, displayind as many li element as needed. -->
-    <li *ngFor="let wilder of wilders; let i = index">
-      <!-- wilder refers to the current index in the Array -->
-      <!-- i is the numerical value of the index provided by Angular -->
-      <h1>{{ wilder.name }}</h1>
+    <!-- Filter the array using our filter pipe. -->
+    <li *ngFor="let wilder of wilders | filter:searchTerm; let i = index">
+      <!-- Display all names uppercase thanks to this Angular pipe -->
+      <h1>{{ wilder.name | uppercase }}</h1>
       <p>{{ wilder.role }}</p>
       <button (click)='removeWilder(i)'>DELETE</button>
       <hr>
