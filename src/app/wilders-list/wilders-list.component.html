@@ -1,3 +1,19 @@
-<p>
-  wilders-list works!
-</p>
+<h1>
+  Here's a list of all our wilders !
+</h1>
+
+
+<!-- Property binding -->
+<label>Add a Wilder</label>
+<!-- Using directives -->
+<input [placeholder]="namePlaceholder">
+<!-- Using String Interpolation -->
+<input placeholder="{{ rolePlaceholder }}">
+
+<!-- Natives Event binding -->
+
+<!-- Not using the Event Object -->
+<button (click)="addWilder()">Add</button>
+<!-- Using the Event Object -->
+<button (click)="removeWilder('You removed a Wilder !')">Remove</button>
+

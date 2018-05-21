@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wilders-list.component.css']
 })
 export class WildersListComponent implements OnInit {
+  namePlaceholder = 'Name';
+  rolePlaceholder = 'Role';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addWilder() {
+    alert('You added a Wilder !');
   }
-
+  removeWilder(value) {
+    alert(value);
+  }
 }
