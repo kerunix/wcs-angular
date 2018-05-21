@@ -7,19 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WildersListComponent implements OnInit {
 
-  // Removed eventEmitters and inputs since we added routes so no more parent component
-  namePlaceholder = 'Name';
-  rolePlaceholder = 'Role';
+  name = 'Name';
+  role = 'Role';
+
+  wilders = [
+    {
+      name: 'Justine',
+      role: 'Campus Manager'
+    },
+    {
+      name: 'Benoit',
+      role: 'Gourou du JS'
+    },
+    {
+      name: 'Bastien',
+      role: 'Inventeur de Java'
+    }
+  ];
 
   constructor() {}
 
   ngOnInit() {}
 
+  // Add a wilder using two-way data binding
   addWilder(value) {
-    alert(value);
+    this.wilders.push({name: this.name, role: this.role});
   }
 
-  removeWilder() {
-    alert('You removed a Wilder !');
+  // Remove a wilder at a specific index
+  removeWilder(index) {
+    this.wilders.splice(index, 1);
   }
 }

@@ -1,12 +1,12 @@
-<h1>Wilder's List App</h1>
+<!-- With hardcoded data -->
+<!-- <h1 [ngClass]="{'red': true, 'underlined': true}">Wilder's List App</h1> -->
 
-<div class="nav">
-  <!-- Works but won't prevent the page from reloading -->
-  <!-- <a href="/">HOME</a>
-  <a href="/wilders">WILDERS</a> -->
+<!-- With data from the component.ts -->
+<h1 [ngClass]="titleClasses">Wilder's List App</h1>
 
-  <!-- Using routerLink prevents the page from reloading. SMOOOOOOOOTH ! -->
+<div class="nav" *ngIf="displayNav">
   <a routerLink="/">HOME</a>
   <a routerLink="/wilders">WILDERS</a>
 </div>
+<button (click)="displayNav = !displayNav">Display Nav</button>
 <router-outlet></router-outlet>

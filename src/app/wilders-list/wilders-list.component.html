@@ -1,20 +1,22 @@
 <h1>
   Here's a list of all our wilders !
 </h1>
-
-
-<!-- Property binding -->
 <label>Add a Wilder</label>
-<!-- Using directives -->
-<input [placeholder]="namePlaceholder">
-<!-- Using String Interpolation -->
-<input placeholder="{{ rolePlaceholder }}">
+<input [(ngModel)]="name">
+<input [(ngModel)]="role">
 
-<!-- Natives Event binding -->
-
-<!-- Not using the Event Object -->
 <button (click)="addWilder('You Added a Wilder !')">Add</button>
-<!-- Using the Event Object -->
-<button (click)="removeWilder()">Remove</button>
 
-
+<div class="list">
+  <ul>
+    <!-- Iterate through our Array, displayind as many li element as needed. -->
+    <li *ngFor="let wilder of wilders; let i = index">
+      <!-- wilder refers to the current index in the Array -->
+      <!-- i is the numerical value of the index provided by Angular -->
+      <h1>{{ wilder.name }}</h1>
+      <p>{{ wilder.role }}</p>
+      <button (click)='removeWilder(i)'>DELETE</button>
+      <hr>
+    </li>
+  </ul>
+</div>

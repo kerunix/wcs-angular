@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  // Data for string interpolation
   homeTitle = 'Welcome to your Wild Code School application !';
 
-  // Data for two-way data binding
   userName = '';
 
   constructor() { }
