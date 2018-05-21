@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-wilders-list',
@@ -7,13 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class WildersListComponent implements OnInit {
 
-  // Declare Input data from parent component
-  @Input() wilder;
-
-  // Declare output events to be emitted to the parent
-  @Output() removeWilder = new EventEmitter();
-  @Output() addWilder = new EventEmitter();
-
+  // Removed eventEmitters and inputs since we added routes so no more parent component
   namePlaceholder = 'Name';
   rolePlaceholder = 'Role';
 
@@ -21,7 +15,11 @@ export class WildersListComponent implements OnInit {
 
   ngOnInit() {}
 
-  remove() {
-    this.removeWilder.emit(null);
+  addWilder(value) {
+    alert(value);
+  }
+
+  removeWilder() {
+    alert('You removed a Wilder !');
   }
 }

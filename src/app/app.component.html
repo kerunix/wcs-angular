@@ -1,14 +1,12 @@
 <h1>Wilder's List App</h1>
-<hr>
-<!-- Outputing first component -->
-<app-home></app-home>
 
-<hr>
-<!-- Outputing second component -->
-<!-- One input and two events to be listened for -->
-<app-wilders-list
-  [wilder]="wilder"
-  (addWilder)="onWilderAdded($event)"
-  (removeWilder)="onWilderRemoved()"
-></app-wilders-list>
+<div class="nav">
+  <!-- Works but won't prevent the page from reloading -->
+  <!-- <a href="/">HOME</a>
+  <a href="/wilders">WILDERS</a> -->
 
+  <!-- Using routerLink prevents the page from reloading. SMOOOOOOOOTH ! -->
+  <a routerLink="/">HOME</a>
+  <a routerLink="/wilders">WILDERS</a>
+</div>
+<router-outlet></router-outlet>

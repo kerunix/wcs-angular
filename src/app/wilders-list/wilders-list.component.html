@@ -13,10 +13,8 @@
 <!-- Natives Event binding -->
 
 <!-- Not using the Event Object -->
-<button (click)="addWilder.emit('You Added a Wilder')">Add</button>
+<button (click)="addWilder('You Added a Wilder !')">Add</button>
 <!-- Using the Event Object -->
-<button (click)="remove()">Remove</button>
+<button (click)="removeWilder()">Remove</button>
 
-<!-- @Input() decorator -->
-<p>{{ wilder.name }} is a {{ wilder.role }}</p>
 
