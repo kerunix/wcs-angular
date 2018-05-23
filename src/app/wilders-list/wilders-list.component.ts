@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// Import Service
+import { WildersService } from '../wilders.service';
 
 @Component({
   selector: 'app-wilders-list',
@@ -7,29 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WildersListComponent implements OnInit {
 
-  // Declare empty search term
   searchTerm = '';
   name = 'Name';
   role = 'Role';
 
-  wilders = [
-    {
-      name: 'Justine',
-      role: 'Campus Manager'
-    },
-    {
-      name: 'Benoit',
-      role: 'Gourou du JS'
-    },
-    {
-      name: 'Bastien',
-      role: 'Inventeur de Java'
-    }
-  ];
+  // Declare local variable
+  wilders;
 
-  constructor() {}
+  // Instantiate service
+  constructor(private wildersService: WildersService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    /**
+     * Use service
+     * Subscribe to returned Observable and assign value to our variable
+     */
+    this.wildersService.getWilders().subscribe(
+      (wilders) => this.wilders = wilders
+    );
+  }
 
   addWilder(value) {
     this.wilders.push({name: this.name, role: this.role});
